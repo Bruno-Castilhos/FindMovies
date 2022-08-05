@@ -4,6 +4,7 @@ import MovieCard from '../components/MovieCard'
 import './MoviesGrid.css'
 
 //const searchUrl = import.meta.env.VITE_SEARCH
+const searchUrl = 'https://api.themoviedb.org/3/search/movie/'
 const apiKey = import.meta.env.VITE_API_KEY
 
 
@@ -21,9 +22,7 @@ const Search = () => {
   }
 
   useEffect(() =>{
-    //const searchWithQueryUrl = `${searchUrl}?${apiKey}&query=${query}`
-
-    const searchWithQueryUrl = `https://api.themoviedb.org/3/search/movie/?${apiKey}&query=${query}`
+    const searchWithQueryUrl = `${searchUrl}?${apiKey}&query=${query}`
 
     getSearchedMovies(searchWithQueryUrl)
   }, [query])
